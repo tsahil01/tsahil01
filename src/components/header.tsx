@@ -12,7 +12,7 @@ export function Header() {
 
                     <div className='flex flex-col'>
                         <h1 className="text-4xl font-semibold">Sahil Tiwaskar</h1>
-                        <p className="text-base text-primary/40">FullStack & Web3 Developer</p>
+                        <p className="text-base text-primary/40 font-mono">FullStack & Web3 Developer</p>
                     </div>
 
                     <div className='flex flex-row justify-start gap-1'>
@@ -41,7 +41,7 @@ export function Header() {
                 </div>
 
                 <div className="flex flex-col">
-                    <Image src="/profile.jpg" alt="Sahil Tiwaskar" width={100} height={100} className="rounded-xl w-32" />
+                    <Image src="/profile.jpg" alt="Sahil Tiwaskar" width={100} height={100} className="rounded-full w-32" />
                 </div>
 
             </div>
