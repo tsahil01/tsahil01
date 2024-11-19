@@ -36,7 +36,6 @@ export function Header() {
                                 <Linkedin className='w-9' />
                             </Button>
                         </Link>
-                       
                     </div>
                 </div>
 
