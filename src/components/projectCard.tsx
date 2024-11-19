@@ -8,9 +8,9 @@ import { Project } from "@/lib/types";
 export function ProjectCard({ title, description, github, website, technologies }: Project) {
     return <Card>
         <CardHeader>
-            <div className="flex flex-row gap-1 justify-between">
+            <div className="flex flex-row gap-1 justify-between flex-wrap">
                 <h3 className="flex flex-col font-bold my-auto">{title}</h3>
-                <div className='flex flex-row justify-start gap-2'>
+                <div className='flex flex-row justify-start gap-2 flex-wrap'>
                     <Link href={github} target='blank'>
                         <Button variant={'outline'} size={'sm'}>
                             <Github className='w-9' />
@@ -32,7 +32,7 @@ export function ProjectCard({ title, description, github, website, technologies 
         </CardContent>
 
         <CardFooter>
-            <div className='flex flex-row gap-1'>
+            <div className='flex flex-row gap-1 flex-wrap'>
                 {technologies.map((tech, i) => <Badge variant={'secondary'} key={i}>{tech}</Badge>)}
             </div>
         </CardFooter>

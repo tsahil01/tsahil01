@@ -6,16 +6,16 @@ import { Github, Linkedin, MailPlusIcon, Twitter } from 'lucide-react';
 export function Header() {
     return <>
         <div className="flex flex-col">
-            <div className="flex flex-row justify-between">
+            <div className="flex flex-row justify-between flex-wrap">
 
                 <div className="flex flex-col gap-3 my-auto">
 
                     <div className='flex flex-col'>
-                        <h1 className="text-4xl font-semibold">Sahil Tiwaskar</h1>
-                        <p className="text-base text-primary/40 font-mono">FullStack & Web3 Developer</p>
+                        <h1 className="md:text-4xl text-3xl font-semibold">Sahil Tiwaskar</h1>
+                        <p className="md:text-base text-sm text-primary/40 font-sans">FullStack & Web3 Developer</p>
                     </div>
 
-                    <div className='flex flex-row justify-start gap-1'>
+                    <div className='flex flex-row justify-start gap-1 flex-wrap'>
                         <Link href="mailto:sahiltiwaskar2003@gmail.com" target='blank'>
                             <Button variant={'outline'} size={'sm'}>
                                 <MailPlusIcon className='w-9' />
@@ -40,7 +40,7 @@ export function Header() {
                 </div>
 
                 <div className="flex flex-col">
-                    <Image src="/profile.jpg" alt="Sahil Tiwaskar" width={100} height={100} className="rounded-full w-32" />
+                    <Image src="/profile.jpg" alt="Sahil Tiwaskar" width={100} height={100} className="rounded-3xl w-32" />
                 </div>
 
             </div>
