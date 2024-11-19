@@ -33,7 +33,7 @@ export function ProjectCard({ title, description, github, website, technologies 
 
         <CardFooter>
             <div className='flex flex-row gap-2 flex-wrap'>
-                {technologies.map((tech, i) => <Badge className="bg-white" variant={'secondary'} key={i}>{tech}</Badge>)}
+                {technologies.map((tech, i) => <Badge className="bg-primary/5" variant={'secondary'} key={i}>{tech}</Badge>)}
             </div>
         </CardFooter>
     </Card>
