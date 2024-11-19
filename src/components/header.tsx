@@ -6,7 +6,7 @@ import { Github, Linkedin, MailPlusIcon, Twitter } from 'lucide-react';
 export function Header() {
     return <>
         <div className="flex flex-col">
-            <div className="flex flex-row justify-between flex-wrap">
+            <div className="flex flex-row justify-between">
 
                 <div className="flex flex-col gap-3 my-auto">
 
