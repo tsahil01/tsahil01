@@ -1,8 +1,5 @@
 import { Project } from "@/lib/types";
 import { ProjectCard } from "./projectCard";
-import { Button } from "./ui/button";
-import { ChevronsDown } from "lucide-react";
-import Link from "next/link";
 
 let ProjectsData: Project[] = [
     {
@@ -17,7 +14,7 @@ let ProjectsData: Project[] = [
         description: "An open-source HD wallet generator for Sol and Eth. Also used as an adapter + token Management.",
         github: "https://github.com/tsahil01/web3-wallet",
         website: "https://web3pouch.vercel.app",
-        technologies: ["Solana/web3.js", "Solana-Wallet-adapter", "Next.js", "Prisma", "Typescript", "ShadCN", "ethers", "bip39", "bs58"]
+        technologies: ["Solana/web3.js", "Solana-Wallet-adapter", "Next.js", "Prisma","Typescript", "ShadCN", "ethers", "bip39", "bs58"]
     },
     {
         title: "Quick Share",
@@ -33,24 +30,33 @@ let ProjectsData: Project[] = [
         website: "https://solanalst.sahiltiwaskar.tech/",
         technologies: ["Sol.devnet", "Next.js", "Typescript", "ShadCN", "Prisma"]
     },
-
+    {
+        title: "Portfolio",
+        description: "My personal portfolio website which is open-source and can be used by anyone.",
+        github: "https://github.com/tsahil01/tsahil01",
+        website: "https://sahiltiwaskar.tech",
+        technologies: ["Next.js", "Typescript", "ShadCN"]
+    },
+    {
+        title: "Fit Track",
+        description: "An web & mobile application which tracks humans pose while performing various exercises",
+        github: "https://github.com/tsahil01/pose-detection",
+        website: "https://fit-track-theta.vercel.app",
+        technologies: ["Computer Vision", "Media-Pipe", "Next.js", "Typescript", "ShadCN"]
+    },
+    
 ]
 
-export function Projects() {
+export function AllProjects() {
     return <>
         <div className="flex my-3 flex-col gap-2">
-            <h2 className="font-semibold text-2xl">Projects</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <h2 className="font-semibold text-2xl">Explore Projects</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                 {ProjectsData.map((project, index) => {
                     return <ProjectCard key={index} {...project} />
                 })}
             </div>
-            <Link href="/projects" className="mx-auto">
-                <Button className="mx-auto rounded-full mt-3" variant={'outline'}>
-                    Show me more {" "}
-                    <ChevronsDown className="w-6 h-6" />
-                </Button>
-            </Link>
+            
         </div>
     </>
 }
