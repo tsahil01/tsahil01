@@ -6,6 +6,13 @@ import Link from "next/link";
 
 let ProjectsData: Project[] = [
     {
+        title: "Up-Time Guard",
+        description: "Keep track of your website's uptime, performance, and health with our powerful monitoring solution. Get instant alerts when things go wrong.",
+        github: "https://github.com/tsahil01/uptime-guard",
+        website: "https://uptimeguard.sahiltiwaskar.tech/",
+        technologies: ["Next.js", "Typescript", "Express.js", "Prisma", "ShadCN", "Cron"]
+    },
+    {
         title: "AI Subtitler",
         description: "Create accurate subtitles for your videos in seconds. Powered by advanced AI and secured by Solana Blockchain",
         github: "https://github.com/tsahil01/ai-subtitles-generator",
