@@ -3,7 +3,7 @@ import { Badge } from "./ui/badge";
 const skills = ['TypeScript', 'JavaScript', 'Next.js', 'React', 'Node.js',
     'Express', 'Postgres', 'Prisma', 'Solidity', 'Web3.js', 'TailwindCSS',
     '@solana/web3.js', 'Solana', 'C/C++',
-    'AWS', 'Docker', 'Git', 'GitHub', 'GitLab'
+    'AWS', 'Docker', 'Git', 'GitHub'
 ];
 
 export function Skills() {
@@ -14,7 +14,7 @@ export function Skills() {
                 I mostly know Full-Stack & Blockchain Development.
             </p>
             <div className="flex md:gap-3 gap-2 flex-wrap justify-evenly">
-                {skills.map(skill => <Badge variant={'secondary'} key={skill}>{skill}</Badge>)}
+                {skills.map(skill => <Badge variant={'outline'} className="rounded-md italic" key={skill}>{skill}</Badge>)}
             </div>
         </div>
     </>

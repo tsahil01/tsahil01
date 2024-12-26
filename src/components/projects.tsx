@@ -53,7 +53,7 @@ export function Projects() {
                 })}
             </div>
             <Link href="/projects" className="mx-auto">
-                <Button className="mx-auto rounded-full mt-3" variant={'outline'}>
+                <Button className="mx-auto rounded-md mt-3" variant={'outline'}>
                     Show me more {" "}
                     <ChevronsDown className="w-6 h-6" />
                 </Button>
