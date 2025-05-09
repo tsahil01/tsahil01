@@ -2,7 +2,7 @@ export function Experience() {
     const experience = [
         {
             company: "TeamOB",
-            role: "Full Stack & React Native Developer",
+            role: "Full Stack & React Native Dev",
             duration: "Jan 2025 – Present",
             location: "Nagpur, India"
         },

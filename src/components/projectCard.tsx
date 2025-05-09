@@ -1,31 +1,25 @@
 import { ExternalLink, Github } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader } from "./ui/card";
 import Link from "next/link";
-import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
 import { Project } from "@/lib/types";
 
 export function ProjectCard({ title, description, github, website, technologies }: Project) {
     return <Card className="bg-primary/5">
-        <CardHeader>
+        <CardHeader className="pb-3">
             <div className="flex flex-row gap-1 justify-between flex-wrap">
-                <h3 className="flex flex-col font-bold my-auto">{title}</h3>
-                <div className='flex flex-row justify-start gap-2 flex-wrap'>
-                    <Link href={github} target='blank'>
-                        <Button variant={'outline'} size={'sm'}>
-                            <Github className='w-9' />
-                        </Button>
+                <h3 className="text-sm font-semibold text-white/70 my-auto">{title}</h3>
+                <div className='flex flex-row justify-start flex-wrap gap-3 text-primary/70'>
+                    <Link href={github} target='blank' className="hover:text-primary transition-colors">
+                        <Github className='w-4 h-4' />
                     </Link>
-                    <Link href={website} target='blank'>
-                        <Button variant={'outline'} size={'sm'}>
-                            <ExternalLink className='w-9' />
-                        </Button>
+                    <Link href={website} target='blank' className="hover:text-primary transition-colors">
+                        <ExternalLink className='w-4 h-4' />
                     </Link>
                 </div>
             </div>
         </CardHeader>
 
-        <CardContent>
+        <CardContent className="text-sm ">
             <CardDescription className="italic">
                 {description}
             </CardDescription>
@@ -33,7 +27,11 @@ export function ProjectCard({ title, description, github, website, technologies 
 
         <CardFooter>
             <div className='flex flex-row gap-2 flex-wrap'>
-                {technologies.map((tech, i) => <Badge className="bg-primary/5 rounded-md italic" variant={'secondary'} key={i}>{tech}</Badge>)}
+                {technologies.map((tech, i) => {
+                    return <span className="flex items-center gap-1 bg-[#232323] rounded-md px-2 py-1 text-xs text-white/70 font-bold">
+                        {tech}
+                    </span>
+                })}
             </div>
         </CardFooter>
     </Card>
