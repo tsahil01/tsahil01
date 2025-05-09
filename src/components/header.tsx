@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Github, Linkedin, MailPlusIcon, Twitter } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { SiNextdotjs, SiNestjs, SiPrisma, SiSolana, SiTypescript, SiExpress } from "react-icons/si";
 
 export function Header() {
     const imake = ["websites.", "apps.", "backend.", "frontend."]
@@ -61,20 +62,34 @@ export function Header() {
                             A random 22 year old guy from India, fixing bugs I created.
                         </p>
                         <p className='text-sm text-primary/70 font-sans'>
-                            Open to startups, big tech, and fixing my mom’s Wi-Fi.
+                            Open to startups, big tech, and fixing my mom's Wi-Fi.
                         </p>
+                        <div className="flex flex-row gap-2 mt-2 flex-wrap">
+                            <span className="flex items-center gap-1 bg-[#232323] rounded-md px-2 py-1 text-xs text-white/90 font-bold">
+                                <SiNextdotjs className="w-4 h-4" /> Next.js
+                            </span>
+                            <span className="flex items-center gap-1 bg-[#232323] rounded-md px-2 py-1 text-xs text-white/90 font-bold">
+                                <SiExpress className="w-4 h-4" /> Express
+                            </span>
+                            <span className="flex items-center gap-1 bg-[#232323] rounded-md px-2 py-1 text-xs text-white/90 font-bold">
+                                <SiPrisma className="w-4 h-4" /> Prisma
+                            </span>
+                            <span className="flex items-center gap-1 bg-[#232323] rounded-md px-2 py-1 text-xs text-white/90 font-bold">
+                                <SiSolana className="w-4 h-4" /> Solana
+                            </span>
+                        </div>
                     </div>
 
 
                     <div className='flex flex-row justify-start gap-1 flex-wrap'>
-                        <Link href="mailto:sahiltiwaskar2003@gmail.com" target='blank'>
-                            <Button variant={'outline'} size={'sm'}>
-                                <MailPlusIcon />
-                            </Button>
-                        </Link>
                         <Link href="https://github.com/tsahil01" target='blank'>
                             <Button variant={'outline'} size={'sm'}>
                                 <Github />
+                            </Button>
+                        </Link>
+                        <Link href="mailto:sahiltiwaskar2003@gmail.com" target='blank'>
+                            <Button variant={'outline'} size={'sm'}>
+                                <MailPlusIcon />
                             </Button>
                         </Link>
                         <Link href="https://x.com/t__sahil" target='blank'>
