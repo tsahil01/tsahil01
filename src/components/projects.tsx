@@ -1,6 +1,5 @@
 import { Project } from "@/lib/types";
 import { ProjectCard } from "./projectCard";
-import { Button } from "./ui/button";
 import { ChevronsDown } from "lucide-react";
 import Link from "next/link";
 
@@ -10,14 +9,15 @@ let ProjectsData: Project[] = [
         description: "A platform for building and deploying your projects.",
         github: "https://github.com/tsahil01/buildx-website",
         website: "https://www.buildx.website/",
-        technologies: ["Next.js", "Typescript", "Express.js", "Prisma", "Reverse Proxy", "Cron"]
+        technologies: ["Next.js", "Typescript", "Express.js", "Prisma", "Reverse Proxy", "Cron"],
+        highlight: true,
     },
     {
         title: "SOL GCP VM",
         description: "Rent Cloud VMs with Solana on Telegram",
         github: "https://github.com/tsahil01/sol-vm",
         website: "https://solvmbot.vercel.app/",
-        technologies: ["Solana", "GCP", "Typescript", "Prisma", "Telegram-Bot-API"]
+        technologies: ["Solana", "GCP", "Typescript", "Prisma", "Telegram-Bot-API"],
     },
     {
         title: "Up-Time Guard",
@@ -45,9 +45,10 @@ let ProjectsData: Project[] = [
 
 export function Projects() {
     return <>
-        <div className="flex my-3 flex-col gap-2">
-            <div className="flex flex-row justify-between">
-                <h2 className="text-lg text-white/70 font-semibold">Projects</h2>
+        <div className="flex my-3 flex-col gap-6">
+            <div className="flex items-center gap-3">
+                <h2 className="text-lg text-white/70 font-semibold">my builds</h2>
+                <div className="flex-1 h-px bg-gradient-to-r from-gray-700 to-transparent"></div>
                 <Link href="/projects" className="flex items-center my-auto text-xs text-primary/70 font-sans hover:underline">
                     more
                     <ChevronsDown className="w-4 h-4" />
@@ -55,7 +56,7 @@ export function Projects() {
             </div>
             <div className="flex flex-col gap-3">
                 {ProjectsData.map((project, index) => {
-                    return <ProjectCard key={index} {...project} />
+                    return <ProjectCard key={index} {...project} highlight={project.highlight} />
                 })}
             </div>
         </div>

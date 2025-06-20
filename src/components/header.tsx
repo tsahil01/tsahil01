@@ -29,7 +29,7 @@ export function Header() {
                         </div>
 
                         <div className='flex flex-col my-auto'>
-                            <h1 className="md:text-xl font-semibold">Sahil</h1>
+                            <h1 className="md:text-xl font-semibold font-sans">Sahil Tiwaskar</h1>
                             <p className="md:text-sm text-xs text-primary/40 font-sans hover:underline hover:cursor-pointer" onClick={() => {
                                 window.open('https://github.com/tsahil01', '_blank')
                             }}>@tsahil01</p>

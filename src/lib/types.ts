@@ -4,4 +4,5 @@ export interface Project {
     github: string;
     website: string;
     technologies: string[];
+    highlight?: boolean;
 }

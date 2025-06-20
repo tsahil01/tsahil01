@@ -3,8 +3,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader } from "./ui
 import Link from "next/link";
 import { Project } from "@/lib/types";
 
-export function ProjectCard({ title, description, github, website, technologies }: Project) {
-    return <Card className="bg-primary/5">
+export function ProjectCard({ title, description, github, website, technologies, highlight }: Project) {
+    return <Card className={`bg-primary/5 ${highlight ? "border-primary/20" : ""}`} key={title}>
         <CardHeader className="pb-3">
             <div className="flex flex-row gap-1 justify-between flex-wrap">
                 <h3 className="text-sm font-semibold text-white/70 my-auto">{title}</h3>
@@ -28,7 +28,7 @@ export function ProjectCard({ title, description, github, website, technologies 
         <CardFooter>
             <div className='flex flex-row gap-2 flex-wrap'>
                 {technologies.map((tech, i) => {
-                    return <span className="flex items-center gap-1 bg-[#232323] rounded-md px-2 py-1 text-xs text-white/70 font-bold">
+                    return <span className="flex items-center gap-1 bg-[#232323] rounded-md px-2 py-1 text-xs text-white/70 font-bold" key={i}>
                         {tech}
                     </span>
                 })}

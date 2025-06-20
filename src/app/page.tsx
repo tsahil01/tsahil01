@@ -1,6 +1,7 @@
 import { Header } from "@/components/header";
 import { Projects } from "@/components/projects";
 import { Experience } from "@/components/experience";
+import { Achievements } from "@/components/achievements";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <Header />
         <Experience />
         <Projects />
+        <Achievements />
       </div>
     </div>
   );
