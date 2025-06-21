@@ -2,6 +2,7 @@ import { Header } from "@/components/header";
 import { Projects } from "@/components/projects";
 import { Experience } from "@/components/experience";
 import { Achievements } from "@/components/achievements";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <Experience />
         <Projects />
         <Achievements />
+        <Footer />
       </div>
     </div>
   );
