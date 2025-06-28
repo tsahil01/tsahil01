@@ -50,7 +50,7 @@ export function Header() {
     }, {
         name: "X",
         icon: <SiX />,
-        link: "https://x.com/t__sahil"
+        link: "https://x.com/sahiltwtz"
     }, {
         name: "LinkedIn",
         icon: <SiLinkedin />,
