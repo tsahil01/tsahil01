@@ -47,8 +47,8 @@ export function Projects() {
     return <>
         <div className="flex my-3 flex-col gap-6">
             <div className="flex items-center gap-3">
-                <h2 className="text-lg text-white/70 font-semibold">my builds</h2>
-                <div className="flex-1 h-px bg-gradient-to-r from-gray-700 to-transparent"></div>
+                <h2 className="text-lg text-muted-foreground font-semibold">my builds</h2>
+                <div className="flex-1 h-px bg-gradient-to-r from-muted to-transparent"></div>
                 <Link href="/projects" className="flex items-center my-auto text-xs text-primary/70 font-sans hover:underline">
                     more
                     <ChevronsDown className="w-4 h-4" />

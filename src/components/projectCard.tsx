@@ -7,7 +7,7 @@ export function ProjectCard({ title, description, github, website, technologies,
     return <Card className={`bg-primary/5 ${highlight ? "border-primary/20" : ""}`} key={title}>
         <CardHeader className="pb-3">
             <div className="flex flex-row gap-1 justify-between flex-wrap">
-                <h3 className="text-sm font-semibold text-white/70 my-auto">{title}</h3>
+                <h3 className="text-sm font-semibold text-muted-foreground my-auto">{title}</h3>
                 <div className='flex flex-row justify-start flex-wrap gap-3 text-primary/70'>
                     <Link href={github} target='blank' className="hover:text-primary transition-colors">
                         <Github className='w-4 h-4' />
@@ -28,7 +28,7 @@ export function ProjectCard({ title, description, github, website, technologies,
         <CardFooter>
             <div className='flex flex-row gap-2 flex-wrap'>
                 {technologies.map((tech, i) => {
-                    return <span className="flex items-center gap-1 bg-[#232323] rounded-md px-2 py-1 text-xs text-white/70 font-bold" key={i}>
+                    return <span className="flex items-center gap-1 bg-muted rounded-md px-2 py-1 text-xs text-muted-foreground font-bold" key={i}>
                         {tech}
                     </span>
                 })}

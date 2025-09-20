@@ -21,13 +21,13 @@ export function Experience() {
     return (
         <div className="flex flex-col gap-4 sm:gap-6">
             <div className="flex items-center gap-3">
-                <h2 className="text-base sm:text-lg text-white/70 font-semibold">cookin' here</h2>
-                <div className="flex-1 h-px bg-gradient-to-r from-gray-700 to-transparent"></div>
+                <h2 className="text-base sm:text-lg text-muted-foreground font-semibold">cookin' here</h2>
+                <div className="flex-1 h-px bg-gradient-to-r from-muted to-transparent"></div>
             </div>
 
             <div className="flex flex-col gap-3 sm:gap-4">
                 {experience.map((exp, index) => (
-                    <Card key={index} className="group relative overflow-hidden border-gray-800/50 bg-primary/5 transition-all duration-300 hover:border-gray-700/70 hover:bg-primary/10 hover:shadow-lg hover:shadow-gray-900/20">
+                    <Card key={index} className="group relative overflow-hidden border-border/50 bg-primary/5 transition-all duration-300 hover:border-border/70 hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/20">
                         <CardHeader className="pb-3 sm:pb-4">
                             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-0">
                                 <div className="flex items-start gap-3 sm:gap-4">
@@ -39,30 +39,30 @@ export function Experience() {
                                                 className="w-full h-full object-cover"
                                             />
                                         ) : (
-                                            <span className="text-white text-lg sm:text-xl font-bold">{exp.company.charAt(0)}</span>
+                                            <span className="text-foreground text-lg sm:text-xl font-bold">{exp.company.charAt(0)}</span>
                                         )}
                                     </div>
                                     <div className="flex flex-col gap-1 sm:gap-2 min-w-0 flex-1">
-                                        <CardTitle className="text-base sm:text-lg font-semibold text-white/70 group-hover:text-white/90 transition-colors">
+                                        <CardTitle className="text-base sm:text-lg font-semibold text-muted-foreground group-hover:text-foreground transition-colors">
                                             {exp.company}
                                         </CardTitle>
-                                        <p className="text-sm text-gray-300 leading-relaxed font-sans">
+                                        <p className="text-sm text-muted-foreground leading-relaxed font-sans">
                                             {exp.role}
                                         </p>
                                     </div>
                                 </div>
                                 <div className="flex flex-col items-start sm:items-end gap-1 sm:gap-2">
-                                    <span className="text-xs text-white/70 bg-primary/10 px-2 py-1 rounded">
+                                    <span className="text-xs text-muted-foreground bg-primary/10 px-2 py-1 rounded">
                                         {exp.duration}
                                     </span>
-                                    <span className="text-xs text-gray-400">
+                                    <span className="text-xs text-muted-foreground">
                                         {exp.location}
                                     </span>
                                 </div>
                             </div>
                         </CardHeader>
                         <CardContent className="pt-0">
-                            <p className="text-sm text-gray-300 leading-relaxed">
+                            <p className="text-sm text-muted-foreground leading-relaxed">
                                 {exp.description}
                             </p>
                         </CardContent>

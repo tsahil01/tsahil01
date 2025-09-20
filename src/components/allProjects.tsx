@@ -59,7 +59,7 @@ let ProjectsData: Project[] = [
 export function AllProjects() {
     return <>
         <div className="flex my-3 flex-col gap-2">
-            <h2 className="text-lg text-white/70 font-semibold">Explore Projects</h2>
+            <h2 className="text-lg text-muted-foreground font-semibold">Explore Projects</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {ProjectsData.map((project, index) => {
                     return <ProjectCard key={index} {...project} />

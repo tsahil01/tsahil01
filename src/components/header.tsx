@@ -88,7 +88,7 @@ export function Header() {
                     </div>
 
                     <div className='flex flex-col gap-1'>
-                        <p className="text-sm text-white font-sans font-bold">
+                        <p className="text-sm text-foreground font-sans font-bold">
                             Ship fast, break things.
                         </p>
 
@@ -127,12 +127,12 @@ export function Header() {
                                 }}
                             >
                                 {skills.map((skill, index) => (
-                                    <span key={index} className="flex items-center gap-1 bg-[#232323] rounded-md px-2 py-1 text-xs text-white/90 font-bold flex-shrink-0">
+                                    <span key={index} className="flex items-center gap-1 bg-muted rounded-md px-2 py-1 text-xs text-muted-foreground font-bold flex-shrink-0">
                                         {skill.icon} {skill.name}
                                     </span>
                                 ))}
                                 {skills.map((skill, index) => (
-                                    <span key={`duplicate-${index}`} className="flex items-center gap-1 bg-[#232323] rounded-md px-2 py-1 text-xs text-white/90 font-bold flex-shrink-0">
+                                    <span key={`duplicate-${index}`} className="flex items-center gap-1 bg-muted rounded-md px-2 py-1 text-xs text-muted-foreground font-bold flex-shrink-0">
                                         {skill.icon} {skill.name}
                                     </span>
                                 ))}
