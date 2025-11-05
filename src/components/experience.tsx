@@ -1,23 +1,34 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import ReactMarkdown from 'react-markdown';
 
 export function Experience() {
-    const experience = [{
-        company: "Dodo Payments",
-        role: "Frontend/ Typescript Developer",
-        duration: "Aug '25 - Present",
-        location: "Bengaluru, India",
-        description: "Working as a Frontend/Typescript Developer, primarily using React, Next, and Typescript. ",
-        logo: "/dodo.jpg"
-    },
+    const experience = [
         {
-            company: "TeamOB",
-            role: "Full Stack & React Native Dev",
-            duration: "Jan '25 - June '25",
-            location: "Nagpur, India",
-            description: "Worked as a Full Stack and React Native Developer, primarily using React and Node.js. Contributed to three main projects: the TeamOB mobile app, a web-based Kanban board, and an AI-powered database chat tool",
+          company: "Dodo Payments",
+          role: "AI & TypeScript Developer",
+          duration: "Aug '25 - Oct '25",
+          location: "Bengaluru, India",
+          description: `
+- Core contributor to the [BillingSDK](https://billingsdk.com/) (#4 on Product Hunt)
+- Built **[Sentra](https://dodopayments.com/sentra)** → AI Agent that automates billing, payment workflows (#2 on Product Hunt)
+- Worked on [Index by Dodo Payments](https://index.dodopayments.com/) - The definitive index of startups, indie hackers, and SaaS tools
+          `,
+          logo: "/dodo.jpg"
         },
-    ]
-    
+        {
+          company: "TeamOB",
+          role: "Full Stack & React Native Developer",
+          duration: "Jan '25 - June '25",
+          location: "Nagpur, India",
+          description: `
+- Developed features for the TeamOB mobile app using React Native
+- Built a web-based Kanban productivity tool and an AI-powered database chat system
+- Worked across both UI and backend to improve performance and user workflows
+          `,
+        },
+      ]
+      
+      
     return (
         <div className="flex flex-col gap-4 sm:gap-6">
             <div className="flex items-center gap-3">
@@ -27,7 +38,7 @@ export function Experience() {
 
             <div className="flex flex-col gap-3 sm:gap-4">
                 {experience.map((exp, index) => (
-                    <Card key={index} className="group relative overflow-hidden border-border/50 bg-primary/5 transition-all duration-300 hover:border-border/70 hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/20">
+                    <Card key={index} className="group relative overflow-hidden border-border/50 bg-primary/5 transition-all duration-300">
                         <CardHeader className="pb-3 sm:pb-4">
                             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-0">
                                 <div className="flex items-start gap-3 sm:gap-4">
@@ -62,9 +73,11 @@ export function Experience() {
                             </div>
                         </CardHeader>
                         <CardContent className="pt-0">
-                            <p className="text-sm text-muted-foreground leading-relaxed">
-                                {exp.description}
-                            </p>
+                            {exp.description && (
+                                <div className="text-sm text-muted-foreground leading-relaxed prose prose-sm dark:prose-invert max-w-none prose-ul:my-2 prose-li:my-1 prose-p:my-0 prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-strong:text-foreground prose-ul:list-disc prose-ul:ml-4">
+                                    <ReactMarkdown>{exp.description.trim()}</ReactMarkdown>
+                                </div>
+                            )}
                         </CardContent>
                     </Card>
                 ))}
