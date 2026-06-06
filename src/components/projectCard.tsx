@@ -1,38 +1,40 @@
-import { ExternalLink, Github } from "lucide-react";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader } from "./ui/card";
+import { ArrowUpRight } from "lucide-react";
+import { SiGithub } from "react-icons/si";
+import { Card } from "./ui/card";
 import Link from "next/link";
 import { Project } from "@/lib/types";
 
-export function ProjectCard({ title, description, github, website, technologies, highlight }: Project) {
-    return <Card className={`bg-primary/5 ${highlight ? "border-primary/20" : ""}`} key={title}>
-        <CardHeader className="pb-3">
-            <div className="flex flex-row gap-1 justify-between flex-wrap">
-                <h3 className="text-sm font-semibold text-muted-foreground my-auto">{title}</h3>
-                <div className='flex flex-row justify-start flex-wrap gap-3 text-primary/70'>
-                    <Link href={github} target='blank' className="hover:text-primary transition-colors">
-                        <Github className='w-4 h-4' />
+export function ProjectCard({ title, description, github, website, technologies }: Project) {
+    return (
+        <Card className="border-border/50 bg-primary/[0.03] p-4" key={title}>
+            <div className="flex items-start justify-between gap-3">
+                <div className="flex flex-col gap-1.5 min-w-0">
+                    <h3 className="text-sm font-mono font-medium text-foreground flex items-center gap-1.5">
+                        <span className="text-primary/30">/</span>
+                        {title}
+                    </h3>
+                    <p className="text-xs text-muted-foreground font-sans leading-relaxed">
+                        {description}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5 mt-1">
+                        {technologies.map((tech, i) => (
+                            <span key={i} className="flex items-center gap-1 bg-muted/50 border border-border/40 rounded-md px-2 py-0.5 text-xs text-muted-foreground font-mono">
+                                {tech}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+                <div className="flex flex-row items-center gap-3 flex-shrink-0 text-primary/50">
+                    <Link href={github} target="blank" aria-label={`${title} GitHub repository`} className="hover:text-primary transition-colors">
+                        <SiGithub className="w-4 h-4" />
                     </Link>
-                    <Link href={website} target='blank' className="hover:text-primary transition-colors">
-                        <ExternalLink className='w-4 h-4' />
-                    </Link>
+                    {website && (
+                        <Link href={website} target="blank" aria-label={`${title} live site`} className="hover:text-primary transition-colors">
+                            <ArrowUpRight className="w-4 h-4" />
+                        </Link>
+                    )}
                 </div>
             </div>
-        </CardHeader>
-
-        <CardContent className="text-sm ">
-            <CardDescription className="italic">
-                {description}
-            </CardDescription>
-        </CardContent>
-
-        <CardFooter>
-            <div className='flex flex-row gap-2 flex-wrap'>
-                {technologies.map((tech, i) => {
-                    return <span className="flex items-center gap-1 bg-muted rounded-md px-2 py-1 text-xs text-muted-foreground font-bold" key={i}>
-                        {tech}
-                    </span>
-                })}
-            </div>
-        </CardFooter>
-    </Card>
+        </Card>
+    );
 }
