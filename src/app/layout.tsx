@@ -6,6 +6,8 @@ import { Provider } from "./provider";
 import { Noise } from "@/components/noise";
 import { Footer } from "@/components/footer";
 import { NowPlaying } from "@/components/nowPlaying";
+import { CommandMenu } from "@/components/commandMenu";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -18,9 +20,41 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+const description =
+  "Frontend Engineer at Dodo Payments. I build for the web, maintain BillingSDK, and ship open source.";
+
 export const metadata: Metadata = {
-  title: "Sahil Tiwaskar",
-  description: "Full-Stack & Blockchain Developer",
+  metadataBase: new URL("https://sahil.wtf"),
+  title: {
+    default: "Sahil Tiwaskar",
+    template: "%s · Sahil Tiwaskar",
+  },
+  description,
+  keywords: [
+    "Sahil Tiwaskar",
+    "Frontend Engineer",
+    "Dodo Payments",
+    "BillingSDK",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "open source",
+  ],
+  authors: [{ name: "Sahil Tiwaskar", url: "https://sahil.wtf" }],
+  creator: "Sahil Tiwaskar",
+  openGraph: {
+    type: "website",
+    url: "https://sahil.wtf",
+    siteName: "Sahil Tiwaskar",
+    title: "Sahil Tiwaskar",
+    description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sahil Tiwaskar",
+    description,
+    creator: "@sahiltwtz",
+  },
 };
 
 export default function RootLayout({
@@ -36,6 +70,7 @@ export default function RootLayout({
         <Provider>
           <div className="relative flex min-h-screen flex-col">
             <Noise />
+            {/* xl+: now-playing floats in the right gutter; below xl it's a mini player */}
             <div className="hidden xl:block fixed top-5 right-5 z-30">
               <NowPlaying variant="full" />
             </div>
@@ -47,7 +82,9 @@ export default function RootLayout({
             </div>
             <Footer />
           </div>
+          <CommandMenu />
         </Provider>
+        <Analytics />
       </body>
     </html>
   );
