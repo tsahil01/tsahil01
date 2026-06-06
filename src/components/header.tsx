@@ -1,13 +1,12 @@
 "use client"
 import Image from 'next/image';
-import { Button } from './ui/button';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { SiNextdotjs, SiPrisma, SiSolana, SiTypescript, SiExpress, SiReact, SiNodedotjs, SiTailwindcss, SiDocker, SiPostgresql, SiGithub, SiLinkedin, SiX, SiGmail, SiTelegram } from "react-icons/si";
+import { SiNextdotjs, SiPrisma, SiSolana, SiTypescript, SiExpress, SiReact, SiNodedotjs, SiTailwindcss, SiDocker, SiPostgresql } from "react-icons/si";
 
 export function Header() {
-    const imake = ["websites.", "apps.", "backend.", "frontend."]
+    const imake = ["websites", "apps", "backends", "frontends", "AI agents"]
     const skills =[{
         name: "Next.js",
         icon: <SiNextdotjs className="w-4 h-4" />
@@ -40,25 +39,20 @@ export function Header() {
         icon: <SiTailwindcss className="w-4 h-4" />
     }]
     const social = [{
-        name: "Github",
-        icon: <SiGithub />,
+        name: "github",
         link: "https://github.com/tsahil01"
     }, {
-        name: "Gmail",
-        icon: <SiGmail />,
-        link: "mailto:sahiltiwaskar2003@gmail.com"
-    }, {
-        name: "X",
-        icon: <SiX />,
+        name: "x",
         link: "https://x.com/sahiltwtz"
     }, {
-        name: "LinkedIn",
-        icon: <SiLinkedin />,
+        name: "linkedin",
         link: "https://www.linkedin.com/in/sahil-tiwaskar/"
     }, {
-        name: "Telegram",
-        icon: <SiTelegram />,
+        name: "telegram",
         link: "https://t.me/SahilTiwaskar"
+    }, {
+        name: "email",
+        link: "mailto:sahiltiwaskar2003@gmail.com"
     }]
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -76,80 +70,80 @@ export function Header() {
                 <div className="flex flex-col gap-3 my-auto overflow-hidden">
                     <div className='flex flex-row gap-3'>
                         <div className="flex flex-col my-auto">
-                            <Image src="/profile.jpg" alt="Sahil Tiwaskar" width={100} height={100} className="rounded-sm w-10" />
+                            <Image src="/profile.jpeg" alt="Sahil Tiwaskar" width={100} height={100} className="rounded-sm w-10" />
                         </div>
 
                         <div className='flex flex-col my-auto'>
-                            <h1 className="md:text-xl font-semibold font-sans">Sahil Tiwaskar</h1>
-                            <p className="md:text-sm text-xs text-primary/40 font-sans hover:underline hover:cursor-pointer" onClick={() => {
-                                window.open('https://github.com/tsahil01', '_blank')
-                            }}>@tsahil01</p>
+                            <h1 className="text-lg md:text-xl font-semibold font-sans tracking-tight leading-tight">Sahil Tiwaskar</h1>
+                            <p className="md:text-sm text-xs text-primary/40 font-sans">ps. i love dogs.</p>
                         </div>
                     </div>
 
-                    <div className='flex flex-col gap-1'>
-                        <p className="text-sm text-foreground font-sans font-bold">
-                            Ship fast, break things.
-                        </p>
-
-                    </div>
+                    <p className="text-sm text-foreground font-sans font-bold">
+                        ship fast, break things.
+                    </p>
                     <div className='flex flex-col gap-1 overflow-hidden'>
-                        <div className='flex flex-row gap-1'>
-                            <p className="text-sm text-primary/70 font-sans">I can make </p>
-                            <AnimatePresence mode="wait">
-                                <motion.p
-                                    key={currentIndex}
-                                    initial={{ y: 20, opacity: 0 }}
-                                    animate={{ y: 0, opacity: 1 }}
-                                    exit={{ y: -20, opacity: 0 }}
-                                    transition={{ duration: 0.3 }}
-                                    className="text-sm text-primary/70 font-sans"
-                                >
-                                    {imake[currentIndex]}
-                                </motion.p>
-                            </AnimatePresence>
+                        <div className='flex flex-row items-center gap-1.5 text-sm'>
+                            <span className="text-primary/70 font-sans">I can make</span>
+                            <span className="relative inline-flex items-center overflow-hidden h-5">
+                                <AnimatePresence mode="wait">
+                                    <motion.span
+                                        key={currentIndex}
+                                        initial={{ y: 14, opacity: 0, filter: 'blur(4px)' }}
+                                        animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+                                        exit={{ y: -14, opacity: 0, filter: 'blur(4px)' }}
+                                        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                                        className="font-mono font-medium text-foreground whitespace-nowrap"
+                                    >
+                                        {imake[currentIndex]}
+                                    </motion.span>
+                                </AnimatePresence>
+                            </span>
                         </div>
                         <p className='text-sm text-primary/70 font-sans'>
-                            A random 22 year old guy from India, fixing bugs I created.
+                            a random 23 year old guy from India, fixing bugs I created.
                         </p>
                         <p className='text-sm text-primary/70 font-sans'>
-                            Open to startups, big tech, and fixing my mom's Wi-Fi.
+                            open to startups, big tech, and fixing my mom's wifi.
                         </p>
-                        <div className="flex flex-row gap-2 mt-2 overflow-hidden w-full">
-                            <motion.div 
-                                className="flex gap-2 whitespace-nowrap scroll-smooth"
-                                animate={{ x: [0, -800] }}
-                                transition={{ 
-                                    duration: 30, 
-                                    repeat: Infinity, 
-                                    ease: "linear",
-                                    repeatType: "loop"
-                                }}
-                            >
-                                {skills.map((skill, index) => (
-                                    <span key={index} className="flex items-center gap-1 bg-muted rounded-md px-2 py-1 text-xs text-muted-foreground font-bold flex-shrink-0">
-                                        {skill.icon} {skill.name}
-                                    </span>
-                                ))}
-                                {skills.map((skill, index) => (
-                                    <span key={`duplicate-${index}`} className="flex items-center gap-1 bg-muted rounded-md px-2 py-1 text-xs text-muted-foreground font-bold flex-shrink-0">
-                                        {skill.icon} {skill.name}
-                                    </span>
-                                ))}
-                            </motion.div>
-                        </div>
                     </div>
 
-
-                    <div className='flex flex-row justify-start gap-1 flex-wrap'>
+                    <div className='flex flex-row items-center justify-start gap-x-2.5 gap-y-1 flex-wrap font-mono text-[13px]'>
                         {social.map((item, index) => (
-                            <Link href={item.link} target='blank' key={index}>
-                                <Button variant={'outline'} size={'sm'} className='hover:bg-primary/10 hover:text-primary'>
-                                    {item.icon}
-                                </Button>
-                            </Link>
+                            <div key={index} className='flex flex-row items-center gap-x-2.5'>
+                                {index > 0 && <span className='text-primary/20 select-none text-xs'>/</span>}
+                                <Link
+                                    href={item.link}
+                                    target='blank'
+                                    className='group relative text-primary/50 hover:text-primary transition-colors duration-200'
+                                >
+                                    {item.name}
+                                    <span className='absolute -bottom-0.5 left-0 h-px w-0 bg-primary transition-all duration-300 group-hover:w-full' />
+                                </Link>
+                            </div>
                         ))}
 
+                    </div>
+
+                    <div className="group relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+                        <div className="flex w-max animate-marquee">
+                            {[0, 1].map((copy) => (
+                                <div
+                                    key={copy}
+                                    aria-hidden={copy === 1}
+                                    className="flex shrink-0 gap-2 pr-2"
+                                >
+                                    {skills.map((skill, index) => (
+                                        <span
+                                            key={`${copy}-${index}`}
+                                            className="flex items-center gap-1.5 whitespace-nowrap rounded-md border border-border/40 bg-muted/50 px-2.5 py-1 text-xs font-mono text-muted-foreground transition-colors duration-200 hover:border-primary/30 hover:text-foreground"
+                                        >
+                                            {skill.icon} {skill.name}
+                                        </span>
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
 

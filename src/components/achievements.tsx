@@ -1,81 +1,65 @@
-import { ExternalLink } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import Image from 'next/image';
+import { Card } from '@/components/ui/card';
 
 export function Achievements() {
     const achievements = [
         {
-            title: "100x Devs Solana Hackathon",
-            description: "First place in 100x Devs Solana Hackathon",
-            link: "https://earn.superteam.fun/listing/100xdevs-solana-mini-hackathon-lfg/",
+            title: "Superteam Solana Hackathon",
             organization: "100x Devs",
-            icon: "/100xdevs.png",    
-            organizationLink: "https://100xdevs.com/",
+            link: "https://earn.superteam.fun/listing/100xdevs-solana-mini-hackathon-lfg/",
             projectLink: "https://solvmbot.vercel.app/",
-            category: "hackathon",
-            experience: "My first Solana hackathon. I built a bot that allows you to rent a Solana VM on Telegram. I used solana web3.js library to interact with the Solana blockchain, Google GCP to rent a VM, a Redis db to store payment status and telegram-bot-api to build the bot.",  
+            prize: "550 USDC",
+            experience: "First place. Built a bot to rent Solana VMs on Telegram using web3.js, GCP, a Redis store for payment status, and the Telegram Bot API.",
             date: "May 2025",
             highlight: true,
         },
     ];
 
-
     return (
         <div className="flex flex-col gap-4 sm:gap-6">
             <div className="flex items-center gap-3">
-                <h2 className="text-base sm:text-lg text-muted-foreground font-semibold">great experiences</h2>
-                <div className="flex-1 h-px bg-gradient-to-r from-muted to-transparent"></div>
+                <h2 className="text-sm text-muted-foreground font-mono lowercase tracking-tight">great experiences</h2>
+                <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent"></div>
             </div>
 
-            <div className="flex flex-col gap-3 sm:gap-4">
-                {achievements.map((achievement, index) => {
-                    return (
-                        <Card key={index} className={`group relative overflow-hidden border-border/50 bg-primary/5 transition-all duration-300 hover:border-border/70 hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/20 ${achievement.highlight ? "border-primary/20" : ""}`}>
-                            <CardHeader className="pb-3 sm:pb-4">
-                                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-0">
-                                    <div className="flex items-start gap-3 sm:gap-4">
-                                        <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center flex-shrink-0`}>
-                                            <Image src={achievement.icon} alt={achievement.title} width={48} height={48} className='object-contain rounded-xl w-full h-full' />
-                                        </div>
-                                        <div className="flex flex-col gap-1 sm:gap-2 min-w-0 flex-1">
-                                            <CardTitle className="text-base sm:text-lg font-semibold text-muted-foreground group-hover:text-foreground transition-colors">
-                                                <Link href={achievement.link} target="_blank" className="hover:text-primary transition-colors duration-200 flex items-center gap-1 w-fit">
-                                                    {achievement.title}
-                                                    <ExternalLink className="w-3 h-3" />
-                                                </Link>
-                                                <Link href={achievement.organizationLink} target="_blank" className="hover:text-primary transition-colors duration-200 flex items-center gap-1 w-fit text-xs text-muted-foreground">
-                                                    {achievement.organization}
-                                                    <ExternalLink className="w-3 h-3" />
-                                                </Link>
-                                            </CardTitle>
-                                            <p className="text-sm text-muted-foreground leading-relaxed font-sans">
-                                                {achievement.description}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-row items-end gap-2">
-                                        <span className="text-xs text-muted-foreground bg-primary/10 px-2 py-1 rounded">
-                                            {achievement.date}
-                                        </span>
-                                        {achievement.projectLink && (
-                                        <Link href={achievement.projectLink} target='blank' className="hover:text-primary transition-colors text-xs text-muted-foreground my-auto">
-                                        <ExternalLink className='w-4 h-4' />
+            <div className="flex flex-col gap-3">
+                {achievements.map((a, index) => (
+                    <Card key={index} className="border-border/50 bg-primary/[0.03] p-4">
+                        <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-3">
+                            <div className="flex flex-col gap-1.5 min-w-0">
+                                <h3 className="text-sm font-mono font-medium text-foreground">
+                                    <Link href={a.link} target="_blank" className="hover:text-primary transition-colors break-words">
+                                        {a.organization}
+                                        <span className="text-primary/30"> / </span>
+                                        <span className="text-muted-foreground">{a.title}</span>
+                                        <ArrowUpRight className="inline w-3 h-3 ml-0.5 -translate-y-px text-primary/40" />
                                     </Link>
-                                    )}
-
-                                    </div>
-                                </div>
-                            </CardHeader>
-                            <CardContent className="pt-0">
-                                <p className="text-sm text-muted-foreground leading-relaxed">
-                                    {achievement.experience}
+                                </h3>
+                                <p className="text-xs text-muted-foreground font-sans leading-relaxed">
+                                    {a.experience}
                                 </p>
-                            </CardContent>
-                        </Card>
-                    );
-                })}
+                                {a.projectLink && (
+                                    <Link href={a.projectLink} target="_blank" className="mt-0.5 inline-flex w-fit items-center gap-1 text-xs font-mono text-primary/50 hover:text-primary transition-colors">
+                                        view project
+                                        <ArrowUpRight className="w-3 h-3" />
+                                    </Link>
+                                )}
+                            </div>
+                            <div className="flex flex-row items-center gap-2 flex-shrink-0">
+                                {a.prize && (
+                                    <span className="text-xs font-mono font-medium text-foreground bg-primary/10 border border-border/60 px-2 py-0.5 rounded">
+                                        {a.prize}
+                                    </span>
+                                )}
+                                <span className="text-xs font-mono text-muted-foreground whitespace-nowrap">
+                                    {a.date}
+                                </span>
+                            </div>
+                        </div>
+                    </Card>
+                ))}
             </div>
         </div>
     );
-} 
+}

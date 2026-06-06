@@ -2,7 +2,8 @@ export interface Project {
     title: string;
     description: string;
     github: string;
-    website: string;
+    website?: string;
     technologies: string[];
     highlight?: boolean;
+    featured?: boolean;
 }

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -69,4 +69,47 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@layer utilities {
+  /* Seamless marquee: two identical copies, each with matching trailing gap,
+     so translating the track by exactly -50% loops without a visible seam. */
+  @keyframes marquee-x {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee-x 28s linear infinite;
+  }
+  .group:hover .animate-marquee,
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  /* left-to-right wipe underline on hover — works on any inline link,
+     including markdown-generated <a> tags that can't hold a child span */
+  .hover-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0% 1px;
+    transition: background-size 0.3s ease;
+    text-decoration: none;
+  }
+  .hover-underline:hover {
+    background-size: 100% 1px;
+  }
+}
+
+/* apply the same wipe underline to all prose (markdown) links */
+.prose a {
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1px;
+  transition: background-size 0.3s ease;
+}
+.prose a:hover {
+  background-size: 100% 1px;
 }
