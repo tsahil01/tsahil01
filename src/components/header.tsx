@@ -79,6 +79,7 @@ export function Header() {
                         </div>
                     </div>
 
+
                     <p className="text-sm text-foreground font-sans font-bold">
                         ship fast, break things.
                     </p>
@@ -146,7 +147,6 @@ export function Header() {
                         </div>
                     </div>
                 </div>
-
             </div>
         </div >
     </>
