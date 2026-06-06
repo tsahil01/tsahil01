@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { SiNextdotjs, SiPrisma, SiSolana, SiTypescript, SiExpress, SiReact, SiNodedotjs, SiTailwindcss, SiDocker, SiPostgresql } from "react-icons/si";
 
 export function Header() {
-    const imake = ["websites", "apps", "backends", "frontends", "AI agents"]
+    const imake = ["websites", "apps", "backends", "frontends", "AI agents", "sdks"]
     const skills =[{
         name: "Next.js",
         icon: <SiNextdotjs className="w-4 h-4" />
@@ -35,7 +35,7 @@ export function Header() {
         name: "Typescript",
         icon: <SiTypescript className="w-4 h-4" />
     }, {
-        name: "Tailwind CSS",
+        name: "Tailwind",
         icon: <SiTailwindcss className="w-4 h-4" />
     }]
     const social = [{
@@ -74,7 +74,7 @@ export function Header() {
                         </div>
 
                         <div className='flex flex-col my-auto'>
-                            <h1 className="text-lg md:text-xl font-semibold font-sans tracking-tight leading-tight">Sahil Tiwaskar</h1>
+                            <h1 className="text-lg md:text-xl font-semibold font-sans tracking-tight leading-tight lowercase">sahil tiwaskar</h1>
                             <p className="md:text-sm text-xs text-primary/40 font-sans">ps. i love dogs.</p>
                         </div>
                     </div>
