@@ -5,6 +5,7 @@ import "./globals.css";
 import { Provider } from "./provider";
 import { Noise } from "@/components/noise";
 import { Footer } from "@/components/footer";
+import { NowPlaying } from "@/components/nowPlaying";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,6 +36,12 @@ export default function RootLayout({
         <Provider>
           <div className="relative flex min-h-screen flex-col">
             <Noise />
+            <div className="hidden xl:block fixed top-5 right-5 z-30">
+              <NowPlaying variant="full" />
+            </div>
+            <div className="xl:hidden">
+              <NowPlaying variant="mini" />
+            </div>
             <div className="flex-1">
               {children}
             </div>
