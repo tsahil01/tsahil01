@@ -1,5 +1,3 @@
-import { ThemeToggle } from "./ToggleTheme";
-
 export function Footer() {
     return <>
     <div className="mt-8 p-5 w-full max-w-3xl mx-auto flex flex-col items-center gap-1 text-center">
