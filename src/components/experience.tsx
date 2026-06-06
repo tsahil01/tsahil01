@@ -27,7 +27,7 @@ export function Experience() {
         },
         {
           company: "Team OB",
-          role: "Full Stack & React Native Developer",
+          role: "Full Stack & React Native Engineer",
           duration: "Jan '25 - June '25",
           location: "Nagpur, India",
           description: `
