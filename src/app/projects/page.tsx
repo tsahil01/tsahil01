@@ -1,6 +1,11 @@
 import { AllProjects } from "@/components/allProjects";
 import { Header } from "@/components/header";
 
+export const metadata = {
+    title: "Projects",
+    description: "Things I've built - web apps, tools, and experiments.",
+};
+
 export default function Page() {
     return (
         <>

@@ -3,6 +3,11 @@ import { ArrowUpRight } from "lucide-react";
 import { Header } from "@/components/header";
 import { contributions, allPrs } from "@/lib/contributions";
 
+export const metadata = {
+    title: "Open Source",
+    description: "Merged pull requests and open-source contributions.",
+};
+
 function FilterChip({ href, active, children }: { href: string; active: boolean; children: React.ReactNode }) {
     return (
         <Link
