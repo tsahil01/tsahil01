@@ -12,7 +12,6 @@ import {
     Copy,
 } from "lucide-react";
 import { SiGithub, SiX, SiLinkedin, SiTelegram } from "react-icons/si";
-import { LocalTime } from "./localTime";
 
 const EMAIL = "sahiltiwaskar2003@gmail.com";
 
@@ -53,21 +52,17 @@ export function CommandMenu() {
 
     return (
         <>
-            <div className="fixed bottom-4 left-4 z-40 hidden sm:flex items-center gap-2">
-                <button
-                    onClick={() => setOpen(true)}
-                    aria-label="Open command menu"
-                    className="group inline-flex items-center gap-2 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 font-mono text-xs text-primary/50 shadow-lg shadow-black/20 transition-colors hover:border-primary/40 hover:text-primary"
-                >
-                    <Search className="w-3.5 h-3.5" />
-                    <span className="hidden sm:flex items-center gap-1">
-                        <kbd className="flex h-[18px] w-[18px] items-center justify-center rounded-[5px] border border-border/60 bg-muted/40 text-[12px] leading-none text-primary/50 group-hover:text-primary/70 transition-colors">⌘</kbd>
-                        <kbd className="flex h-[18px] w-[18px] items-center justify-center rounded-[5px] border border-border/60 bg-muted/40 text-[11px] lowercase leading-none text-primary/50 group-hover:text-primary/70 transition-colors">k</kbd>
-                    </span>
-                    <span className="sm:hidden">menu</span>
-                </button>
-                <LocalTime />
-            </div>
+            <button
+                onClick={() => setOpen(true)}
+                aria-label="Open command menu"
+                className="group hidden sm:inline-flex items-center gap-2 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 font-mono text-xs text-primary/50 shadow-lg shadow-black/20 transition-colors hover:border-primary/40 hover:text-primary"
+            >
+                <Search className="w-3.5 h-3.5" />
+                <span className="flex items-center gap-1">
+                    <kbd className="flex h-[18px] w-[18px] items-center justify-center rounded-[5px] border border-border/60 bg-muted/40 text-[12px] leading-none text-primary/50 group-hover:text-primary/70 transition-colors">⌘</kbd>
+                    <kbd className="flex h-[18px] w-[18px] items-center justify-center rounded-[5px] border border-border/60 bg-muted/40 text-[11px] lowercase leading-none text-primary/50 group-hover:text-primary/70 transition-colors">k</kbd>
+                </span>
+            </button>
 
             {open && (
                 <div

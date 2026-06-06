@@ -6,7 +6,7 @@ import { Provider } from "./provider";
 import { Noise } from "@/components/noise";
 import { Footer } from "@/components/footer";
 import { NowPlaying } from "@/components/nowPlaying";
-import { CommandMenu } from "@/components/commandMenu";
+import { Dock } from "@/components/dock";
 import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = localFont({
@@ -82,7 +82,7 @@ export default function RootLayout({
             </div>
             <Footer />
           </div>
-          <CommandMenu />
+          <Dock />
         </Provider>
         <Analytics />
       </body>
