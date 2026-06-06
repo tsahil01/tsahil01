@@ -97,7 +97,7 @@ export function NowPlaying({ variant = "full" }: { variant?: "full" | "mini" }) 
     if (variant === "mini") {
         return (
             <div className="fixed top-4 right-4 z-40 font-mono">
-                <div className="group flex items-center rounded-xl border border-border/50 bg-background shadow-lg shadow-black/30 transition-colors hover:border-primary/40">
+                <div className="group flex items-center rounded-xl border border-border/50 bg-background shadow-lg shadow-black/30 transition-colors hover:border-primary/40 animate-in fade-in slide-in-from-top-2 duration-500">
                     <button
                         onClick={() => setExpanded((v) => !v)}
                         aria-label={expanded ? "Collapse now playing" : `Now playing: ${track.title} by ${track.artist}. Tap to expand.`}
@@ -138,7 +138,7 @@ export function NowPlaying({ variant = "full" }: { variant?: "full" | "mini" }) 
             href={ytMusicUrl}
             target="_blank"
             aria-label={`${track.isPlaying ? "Now playing" : "Last played"}: ${track.title} by ${track.artist}`}
-            className="group inline-flex items-center gap-2.5 rounded-xl border border-border/50 bg-background/60 py-1.5 pl-1.5 pr-3 font-mono shadow-lg shadow-black/20 backdrop-blur-md transition-all duration-200 hover:border-primary/40 hover:bg-background/80"
+            className="group inline-flex items-center gap-2.5 rounded-xl border border-border/50 bg-background/60 py-1.5 pl-1.5 pr-3 font-mono shadow-lg shadow-black/20 backdrop-blur-md transition-all duration-200 hover:border-primary/40 hover:bg-background/80 animate-in fade-in slide-in-from-top-2 duration-500"
         >
             <Cover track={track} size="w-10 h-10" />
             {TrackText}

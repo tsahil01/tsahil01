@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Header } from "@/components/header";
+import { Reveal } from "@/components/reveal";
 import { contributions, allPrs } from "@/lib/contributions";
 
 export const metadata = {
@@ -31,7 +32,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ r
     return (
         <>
             <div className="flex flex-col my-4 max-w-3xl mx-auto p-5 gap-7">
-                <Header />
+                <Reveal delay={0}><Header /></Reveal>
             </div>
 
             <div className="max-w-3xl mx-auto p-5 w-full flex flex-col gap-5">
