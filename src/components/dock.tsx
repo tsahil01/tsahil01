@@ -3,10 +3,8 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { CommandMenu } from "./commandMenu";
 import { ChatWidget } from "./chatWidget";
-import { LocalTime } from "./localTime";
 
-// Bottom-left dock: command palette + chat + local time, in one row.
-// Chat stays on phones; the ⌘k trigger and clock are desktop-only.
+// Bottom-left dock: command palette (desktop) + chat (all screens).
 export function Dock() {
     const reduce = useReducedMotion();
     return (
@@ -18,9 +16,6 @@ export function Dock() {
         >
             <CommandMenu />
             <ChatWidget />
-            <div className="hidden sm:block">
-                <LocalTime />
-            </div>
         </motion.div>
     );
 }

@@ -6,8 +6,10 @@ import { Provider } from "./provider";
 import { Noise } from "@/components/noise";
 import { Footer } from "@/components/footer";
 import { NowPlaying } from "@/components/nowPlaying";
+import { LocalTime } from "@/components/localTime";
 import { Dock } from "@/components/dock";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -70,6 +72,10 @@ export default function RootLayout({
         <Provider>
           <div className="relative flex min-h-screen flex-col">
             <Noise />
+            {/* xl+: local time floats in the left gutter (mirrors now-playing on the right) */}
+            <div className="hidden xl:block fixed top-5 left-5 z-30">
+              <LocalTime />
+            </div>
             {/* xl+: now-playing floats in the right gutter; below xl it's a mini player */}
             <div className="hidden xl:block fixed top-5 right-5 z-30">
               <NowPlaying variant="full" />
@@ -85,6 +91,7 @@ export default function RootLayout({
           <Dock />
         </Provider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
